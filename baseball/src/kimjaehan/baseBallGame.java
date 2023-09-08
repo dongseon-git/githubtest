@@ -24,9 +24,9 @@ public class baseBallGame {
             ball[j] = temp;
         }
 
-        int[] loto = Arrays.copyOfRange(ball, 0, 3); //copyOfRange 메서드를 통해 0~5까지 요소 외 자르기
+        int[] yagu = Arrays.copyOfRange(ball, 0, 3); //copyOfRange 메서드를 통해 0~5까지 요소 외 자르기
         //System.out.println(Arrays.toString(ball));
-        //System.out.println(Arrays.toString(loto));
+        //System.out.println(Arrays.toString(yagu));
         System.out.println("숫자 3개를 입력하세요");
         while (true) {
             int s = 0;
@@ -40,16 +40,16 @@ public class baseBallGame {
             }
             System.out.print(c + "번째 시도 " + Arrays.toString(user));
             System.out.println();
-            for(int i = 0; i<loto.length; i++){
+            for(int i = 0; i<yagu.length; i++){
                 for(int d = 0; d<user.length; d++){
-                    if(loto[i] == user[d] && i == d){
+                    if(yagu[i] == user[d] && i == d){
                         s++;
-                    } else if(loto[i] == user[d] && i == d){
+                    } else if(yagu[i] == user[d] && i != d){
                         b++;
                     }
                 }
             }
-            System.out.println("생성된 숫자 = "+Arrays.toString(loto));// 생성된 숫자 확인
+            System.out.println("생성된 숫자 = "+Arrays.toString(yagu));// 생성된 숫자 확인
             System.out.println(s+" S "+b+" B ");
             if(s == 3){
                 System.out.println("3S");
